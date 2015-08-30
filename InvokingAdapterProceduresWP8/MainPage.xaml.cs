@@ -54,10 +54,10 @@ namespace InvokingAdapterProceduresWP8
             ReceivedTextBlock.Text = "Invoking Procedure ...\n";
             PanoramaControl.DefaultItem = Console;
 
-            WLProcedureInvocationData invocationData = new WLProcedureInvocationData("RSSReader", "getFeeds"); 
+            WLProcedureInvocationData invocationData = new WLProcedureInvocationData("RSSReader", "getFeed"); 
             invocationData.setParameters(new Object[]{});
             String myContextObject = "InvokingAdapterProceduresWP8";
-            WLRequestOptions options = new WLRequestOptions(); 
+            WLRequestOptions options = new WLRequestOptions();
             options.setInvocationContext(myContextObject);
             WLClient.getInstance().invokeProcedure(invocationData, new MyInvokeListener(this), options);
         }
@@ -70,6 +70,6 @@ namespace InvokingAdapterProceduresWP8
         public void AddTextToReceivedTextBlock(String param)
         {
             ReceivedTextBlock.Text += param;
-        } 
+        }
     }
 }
